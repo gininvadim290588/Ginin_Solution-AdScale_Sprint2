@@ -31,6 +31,7 @@ Campaign Updated
 Kafka
  →
 Redis Update
+
 Используется:
 Cache Aside
 
