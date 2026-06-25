@@ -34,13 +34,13 @@ Apache Avro
 }
 
 ### Consumer Groups
-*Analytics
+* Analytics
 analytics-consumer-group
-*Finance
+* Finance
 finance-consumer-group
-*Notification
+* Notification
 notification-consumer-group
-*Campaign
+* Campaign
 campaign-consumer-group
 
 
