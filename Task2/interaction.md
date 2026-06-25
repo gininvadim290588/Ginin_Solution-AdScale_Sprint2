@@ -40,8 +40,10 @@ DSP
 Gateway
  →
 Ad Server
- → gRPC
+ → 
 Bidding Service
+
+gRPC
  →
 Redis
 
