@@ -1,38 +1,43 @@
-# Выбор Gateway
+# Паттерны надёжности
 
-Kong Gateway
+#### Circuit Breaker
 
-Причины:
-* быстро внедряется;
-* поддерживает rate limiting;
-* поддерживает OAuth/JWT;
-* поддерживает observability.
+Используется для вызовов:
+* Ad Server → Bidding
+* Ad Server → Redis
+* Finance → Payment Gateway
+Преимущества:
+* предотвращение каскадных отказов;
+* быстрое восстановление.
+#### Retry + Exponential Backoff
+Используется для:
+* Kafka Producer
+* Kafka Consumer
+* Payment Gateway
+Пример:
+1 sec
+2 sec
+4 sec
+8 sec
 
-Основные функции:
+#### Timeout
+Для RTB:
+* Gateway → Ad Server = 20 ms
+* Ad Server → Bidding = 15 ms
+* Redis = 5 ms
 
-##### Маршрутизация
+Общий бюджет: < 80 ms
+#### Fallback
+Если Redis недоступен:
+использовать локальный кэш последней версии кампаний.
 
-/openrtb/bid
-↓
-Ad Server
+Если Bidding Service недоступен:
+вернуть заранее определённую безопасную ставку.
 
-#### Rate Limiting
+#### Идемпотентность финансовых операций
+Каждая операция получает:
+* transaction_id
+Повторный запрос:
+* same transaction_id
+не приводит к повторному списанию.
 
-Ограничение запросов DSP.
-Например, 20000 RPS на одного партнёра.
-
-#### Аутентификация
-
-Поддержка: API Key, JWT.
-
-#### Мониторинг
-Сбор: RPS; P95; P99; ошибки.
-
-####  Circuit Breaker
-
-При деградации Bidding Service:
-Closed
- ↓
-Open
- ↓
-Half Open
