@@ -1,21 +1,21 @@
 # Event-streaming
 ### Kafka Topics
 * Кампании
-campaign-created
-campaign-updated
-campaign-paused
-campaign-deleted
+campaign-created;
+campaign-updated;
+campaign-paused;
+campaign-deleted;
 * Финансы
-budget-updated
-balance-updated
-payment-completed
+budget-updated;
+balance-updated;
+payment-completed;
 * RTB
-bid-request
-bid-response
+bid-request;
+bid-response;
 * События
-impression-created
-click-created
-conversion-created
+impression-created;
+click-created;
+conversion-created/
 
 ### Формат сообщений
 Используется:
