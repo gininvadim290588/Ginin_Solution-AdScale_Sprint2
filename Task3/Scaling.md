@@ -35,9 +35,13 @@ campaign_id
 
 #### Statistics
 Шардирование Kafka:
+
 partition key = campaign_id
+
 Bidding
+
 Redis Cluster:
+
 hash(campaign_id)
 
 #### CQRS
