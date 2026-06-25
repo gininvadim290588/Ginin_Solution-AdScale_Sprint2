@@ -33,6 +33,7 @@ Kafka
 Redis
 
 Update
+
 Используется:
 Cache Aside
 
