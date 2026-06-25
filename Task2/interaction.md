@@ -36,31 +36,19 @@ Kafka решает все три задачи.
 
 ##### Диаграмма взаимодействия
 DSP
-
- ↓
- 
+ ↓ 
 Gateway
-
  ↓
- 
 Ad Server
-
  ↓ gRPC
- 
 Bidding Service
-
  ↓
- 
 Redis
 
 Impression
-
  ↓
- 
 Event Service
-
  ↓
 Kafka
-
  ↓
 Analytics
