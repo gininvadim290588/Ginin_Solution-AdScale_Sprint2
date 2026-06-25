@@ -41,9 +41,7 @@ Gateway
  →
 Ad Server
  → 
-Bidding Service
-
-gRPC
+Bidding Service (gRPC)
  →
 Redis
 
