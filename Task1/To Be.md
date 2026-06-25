@@ -97,10 +97,8 @@ authentication.
 #### PostgreSQL Cluster
 Отдельные базы:
 * Campaign DB;
-* Finance DB;
-* Analytics DB.
-
+* Finance DB.
 #### ClickHouse
-Для аналитики и отчётности
+Analytics DB.
 #### Kubernetes
 Для горизонтального масштабирования.
