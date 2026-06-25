@@ -1,4 +1,4 @@
-# Database-strategy
+# Database-стретегия
 Сервис | База данных | Обоснование
 ------|:--------:|------:
 Bidding Service     | Redis     | RTB требует latency < 80 ms. Используется in-memory хранение ставок и таргетинга
