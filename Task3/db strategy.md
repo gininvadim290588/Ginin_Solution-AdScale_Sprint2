@@ -1,42 +1,33 @@
 # Database-strategy
 Сервис | База данных | Обоснование
 ------|:--------:|------:
-1     | шило     | 10
-2     | мыло     | 20
-3     | веревка  | 40
+Bidding Service     | Redis     | RTB требует latency < 80 ms. Используется in-memory хранение ставок и таргетинга
+Campaign Service     | PostgreSQL     | ACID, управление кампаниями и креативами
+Statistics Service    | Kafka + ClickHouse  | Высокоскоростная запись событий
+Analytics Service     | ClickHouse  | OLAP-запросы и отчётность
+Financial Service     | PostgreSQL  | Строгая консистентность финансовых операций
 
+#### Bidding Service  
+Почему Redis?
 
-
-Обоснование
-Bidding Service
-Redis
-RTB требует latency < 80 ms. Используется in-memory хранение ставок и таргетинга
-Campaign Service
-PostgreSQL
-ACID, управление кампаниями и креативами
-Statistics Service
-Kafka + ClickHouse
-Высокоскоростная запись событий
-Analytics Service
-ClickHouse
-OLAP-запросы и отчётность
-Financial Service
-PostgreSQL
-Строгая консистентность финансовых операций
-Bidding Service
-Почему Redis
 Для RTB недопустимо выполнять запросы к PostgreSQL на каждый bid request.
+
 Текущая проблема:
+
 Auction Engine
-    ↓
+    →
 PostgreSQL
+
 Целевое состояние:
 Bidding Service
-    ↓
+    →
 Redis
+
 Средняя задержка:
+
 Redis < 1 ms
-Campaign Service
+
+#### Campaign Service
 Использует PostgreSQL.
 Хранит:
 кампании;
