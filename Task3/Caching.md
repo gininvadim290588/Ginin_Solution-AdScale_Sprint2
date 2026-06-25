@@ -12,9 +12,9 @@ budget:1001
 
 #### Где расположен Redis
 Campaign Service
-       ↓
+       →
 Redis Cluster
-       ↓
+       →
 Bidding Service
 
 #### TTL
@@ -28,9 +28,9 @@ Bidding Service
 #### Инвалидация
 При изменении кампании:
 Campaign Updated
- ↓
+ →
 Kafka
- ↓
+ →
 Redis Update
 Используется:
 Cache Aside
@@ -39,9 +39,9 @@ Cache Aside
 После рестарта:
 
 Campaign DB
- ↓
+ →
 Campaign Service
- ↓
+ →
 Redis
 
 Предзагрузка:
