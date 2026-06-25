@@ -83,6 +83,6 @@ service BiddingService {
 }
 
 ##### Kafka Topics
-campaign_updated
-budget_updated
-campaign_paused
+* campaign_updated
+* budget_updated
+* campaign_paused
