@@ -38,7 +38,7 @@ campaign_id
 
 partition key = campaign_id
 
-Bidding
+#### Bidding
 
 Redis Cluster:
 
