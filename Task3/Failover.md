@@ -1,12 +1,11 @@
 # Отказоустойчивость данных
-
-#### RPO / RTO
-Сервис      RPO      RTO
-Bidding      0 мин   5 мин
-Campaign  15 мин  30 мин
-Statistics    0 мин   15 мин
-Analytics    1 час    1 час
-Finance      0 мин   15 мин
+Сервис |  RPO | RTO
+------|:--------:|------:
+Bidding | 0 мин    | 5 мин
+Campaign  |    0 мин   |  30 мин
+Statistics | 0 мин    |   15 мин
+Analytics|  1 час   |        1 час
+Finance |  0 мин    |      15 мин
 
 #### Backup Strategy
 ##### PostgreSQL
