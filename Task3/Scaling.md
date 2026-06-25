@@ -3,7 +3,9 @@
 ## Репликация
 #### Campaign DB
 Primary
+
  ├─ Read Replica 1
+ 
  └─ Read Replica 2
 Используется схема:
 Write → Primary
@@ -11,7 +13,9 @@ Read → Replica
 
 #### Finance DB
 Primary
+
  └─ Standby Replica
+ 
 Причина:
 финансовые операции критичны к консистентности.
 
